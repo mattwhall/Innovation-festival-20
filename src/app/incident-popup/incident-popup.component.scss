@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    width: 100%;
+
+    .name {
+        text-align: left;
+        margin-right: 20px;
+        width: 50%;
+    }
+    .value {
+        text-align: left;
+        width: 50%;
+        font-weight: bold;
+    }
+}
+
+h2 {
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.parts textarea {
+    width: 100%;
+    padding: 5px;
+}

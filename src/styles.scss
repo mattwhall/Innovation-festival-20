@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+app-incident-popup, app-base-popup {
+    // width: 100%;
+    // position: relative;
+}
+.popup {
+    position: absolute;
+    width: 900px;
+    background-color: white;
+    padding: 20px;
+    margin: 50px 30%;
+}
+
+h1 {
+    font-size: 21pt;
+    margin: 5px 0px;
+}
+
+.split-container {
+    display: flex;
+    .left, .right {
+        width: 50%;
+    }
+}
+
+div.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

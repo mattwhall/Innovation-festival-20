@@ -1,0 +1,33 @@
+<div *ngIf="showPopup" class="popup">
+    <div class="close" (click)="closePopup()">x</div>
+    <div class="popup-content">
+        <h1>Incident <span>###</span></h1>
+        <div class="split-container">
+            <div class="left">
+                <div class="row">
+                    <div class="name">recommended Vehcile</div>
+                    <div class="value">Nissan Leaf</div>
+                </div>
+                <div class="row">
+                    <div class="name">event Type</div>
+                    <div class="value">Pipe Reinforcement</div>
+                </div>
+                <div class="row">
+                    <div class="name">road closure?</div>
+                    <div class="value">Yes</div>
+                </div>
+                <div class="row">
+                    <div class="name">Nearest Depot</div>
+                    <div class="value">Sunderland</div>
+                </div>
+
+            </div>
+            <div class="right">
+                <h2>Parts Required</h2>
+                <div class="parts">
+                    <textarea>Spanner, Pipe</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
