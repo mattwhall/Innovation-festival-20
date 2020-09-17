@@ -5,40 +5,34 @@
         <h2>Vehicles</h2>
         <div class="split-container">
             <div class="cars">
-                <div class="car">
-                    <span class="make">Nissan Leaf</span>
-                    <span class="registration">AA09 911</span>
-                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                </div>
-                <div class="car">
-                    <span class="make">BMW I3</span> 
-                    <span class="registration">AA09 911</span>
-                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                </div>
-                <div class="car">
-                    <span class="make">Tesla Model 3</span> 
-                    <span class="registration">AA09 911</span>
-                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                </div>
-                <div class="car">
-                    <span class="make">Mitsubishi Outland Phev</span> 
-                    <span class="registration">AA09 911</span>
-                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                <div class="car" *ngFor="let car of vehicles" (click)="setActive(car)">
+                    <div>
+                        <span class="make" [ngClass]="{'active' : isActive(car.reg)}">{{car.make}}</span>
+                        <span class="registration">{{car.reg}}</span>
+                        <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                    </div>
                 </div>
             </div>
             <div class="car-view">
-                <h2>Nissan Leaf</h2> 
+                <h2>{{activeVehicle.make}}</h2> 
                 <div class="row">
-                    <div class="name">recommended Vehicle</div>
-                    <div class="value">Nissan Leaf</div>
+                    <div class="name">Is electric?</div>
+                    <div class="value">
+                        <div *ngIf="activeVehicle.isElectric">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </div>
+                        <div *ngIf="!activeVehicle.isElectric">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="name">event Type</div>
-                    <div class="value">Pipe Reinforcement</div>
+                    <div class="name">Range</div>
+                    <div class="value">{{activeVehicle.range}} miles</div>
                 </div>
                 <div class="row">
-                    <div class="name">road closure?</div>
-                    <div class="value">Yes</div>
+                    <div class="name">MPG</div>
+                    <div class="value">{{activeVehicle.mpg}}</div>
                 </div>
 
                 <div class="van">
