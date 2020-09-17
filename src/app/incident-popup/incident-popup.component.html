@@ -1,11 +1,11 @@
 <div *ngIf="showPopup" class="popup">
     <div class="close" (click)="closePopup()">x</div>
     <div class="popup-content">
-        <h1>Incident <span>###</span></h1>
+        <h1>Incident <span>{{data.properties.jpNum}}</span></h1>
         <div class="split-container">
             <div class="left">
                 <div class="row">
-                    <div class="name">recommended Vehcile</div>
+                    <div class="name">recommended Vehicle</div>
                     <div class="value">Nissan Leaf</div>
                 </div>
                 <div class="row">
@@ -26,6 +26,12 @@
                 <h2>Parts Required</h2>
                 <div class="parts">
                     <textarea>Spanner, Pipe</textarea>
+                    <h3>Drivers Available</h3>
+                    <ul class="driver-select">
+                        <li><span>Joe blogs</span><div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div></li>
+                        <li><span>Tom blogs</span><div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div></li>
+                        <li><span>Bill blogs</span><div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div></li>
+                    </ul>
                 </div>
             </div>
         </div>

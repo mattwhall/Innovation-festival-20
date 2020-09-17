@@ -10,6 +10,8 @@ export class IncidentPopupComponent implements OnInit {
   @Input() showPopup: boolean;
   @Output() showPopupChange = new EventEmitter<boolean>();
 
+  @Input() data:any;
+  
   constructor() { 
     this.showPopup = false;
   }

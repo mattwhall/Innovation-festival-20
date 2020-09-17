@@ -1,0 +1,63 @@
+.cars {
+    width: 50%;
+    .car {
+        padding: 20px 10px;
+        // margin: 0px 0px;
+        border-bottom: 1px solid #dfdfdf;
+
+        &:hover {
+            background-color: #eeeeee;
+            
+            .action {
+                color: black;
+                margin-left: 80px;
+                transition: margin 0.5s;
+            }
+        }
+
+        .make {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .action {
+            display: inline-block;
+            margin-left: 40px;
+            transition: margin 0.5s;
+            color:#dfdfdf;
+        }
+
+    }
+
+    .car:last-of-type {
+        border-bottom-width: 0px;
+    }
+
+    .registration {
+        background-color: #FFD300;
+        padding: 5px 10px;
+        font-weight: bolder;
+        border-radius: 2px;
+    }
+}
+
+.car-view {
+    padding: 0px 20px;
+    width: 50%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 100%);
+
+    .van {
+        font-size: 50pt;
+        text-align: right;
+
+        marquee {
+            border-bottom: 1px solid black;
+        }
+
+        .fa-truck {
+            position: relative;
+            top: 10px;
+        }
+    }
+}

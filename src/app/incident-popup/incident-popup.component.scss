@@ -1,25 +1,43 @@
-.row {
-    display: flex;
-    width: 100%;
-
-    .name {
-        text-align: left;
-        margin-right: 20px;
-        width: 50%;
-    }
-    .value {
-        text-align: left;
-        width: 50%;
-        font-weight: bold;
-    }
-}
 
 h2 {
     margin: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .parts textarea {
-    width: 100%;
+    width: 90%;
     padding: 5px;
+}
+
+.driver-select {
+    list-style: none;
+    padding-left: 0px;
+
+    li {
+        padding: 15px 10px;
+
+        &:hover {
+            background-color: #eeeeee;
+
+            .action {
+                color: black;
+                margin-left: 80px;
+                transition: margin 0.5s;
+            }
+        }
+
+        span {
+            display: inline-block;
+            width: 80px;
+        }
+    }
+
+    .action {
+        display: inline-block;
+        margin-left: 40px;
+        transition: margin 0.5s;
+        color:#dfdfdf;
+    }
+
+
 }

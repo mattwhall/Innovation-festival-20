@@ -1,12 +1,52 @@
 <div *ngIf="showPopup"  class="popup">
     <div class="popup-content">
         <div class="close" (click)="closePopup()">x</div>
-        <h1>Vehicles</h1>
-        <div class="car">
-            <span>Nissan Leaf </span> - <span>AA09 911</span>
-            <span>BMW I3 </span> - <span>AA09 911</span>
-            <span>Tesla Model 3</span> - <span>AA09 911</span>
-            <span>Ford Ranger</span> - <span>AA09 911</span>
+        <h1>{{data.properties.Description}}</h1>
+        <h2>Vehicles</h2>
+        <div class="split-container">
+            <div class="cars">
+                <div class="car">
+                    <span class="make">Nissan Leaf</span>
+                    <span class="registration">AA09 911</span>
+                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+                <div class="car">
+                    <span class="make">BMW I3</span> 
+                    <span class="registration">AA09 911</span>
+                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+                <div class="car">
+                    <span class="make">Tesla Model 3</span> 
+                    <span class="registration">AA09 911</span>
+                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+                <div class="car">
+                    <span class="make">Mitsubishi Outland Phev</span> 
+                    <span class="registration">AA09 911</span>
+                    <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="car-view">
+                <h2>Nissan Leaf</h2> 
+                <div class="row">
+                    <div class="name">recommended Vehicle</div>
+                    <div class="value">Nissan Leaf</div>
+                </div>
+                <div class="row">
+                    <div class="name">event Type</div>
+                    <div class="value">Pipe Reinforcement</div>
+                </div>
+                <div class="row">
+                    <div class="name">road closure?</div>
+                    <div class="value">Yes</div>
+                </div>
+
+                <div class="van">
+                    <marquee>
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </marquee>
+                </div>
+            </div>
         </div>
     </div>
 </div>

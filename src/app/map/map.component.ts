@@ -12,6 +12,8 @@ export class InnovationMapComponent implements OnInit,AfterViewInit {
   map: Map;
   showBase: boolean = false;
   showIncident: boolean = false;
+  baseData: any;
+  incidentData: any;
 
   ngOnInit(): void {
     this.map = new Map({
@@ -29,14 +31,14 @@ export class InnovationMapComponent implements OnInit,AfterViewInit {
       var _this = this;
       this.map.on("load", function(){
         _this.map.on("click", "missionzero", function(e){
-          console.log(e);
-          console.log(e.features[0]);
           _this.showIncident = true;
+          _this.showBase = false;
+          _this.incidentData = e.features[0];
         });
         _this.map.on("click", "northumbriadepotasgeojson-atfs9j", function(e){
-          console.log(e);
-          console.log(e.features[0]);
           _this.showBase = true;
+          _this.showIncident = false;
+          _this.baseData = e.features[0];
         });
       });
   }

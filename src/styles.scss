@@ -6,10 +6,23 @@ body { margin: 0; padding: 0; }
     font-family: Arial, Helvetica, sans-serif;
 }
 
-app-incident-popup, app-base-popup {
-    // width: 100%;
-    // position: relative;
+.row {
+    display: flex;
+    width: 100%;
+    margin: 10px 0px;
+
+    .name {
+        text-align: left;
+        margin-right: 20px;
+        width: 50%;
+    }
+    .value {
+        text-align: left;
+        width: 50%;
+        font-weight: bold;
+    }
 }
+
 .popup {
     position: absolute;
     width: 900px;
