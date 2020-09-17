@@ -31,6 +31,19 @@ export class BasePopupComponent implements OnInit {
     this.activeVehicle = vehicle;
   }
 
+  getColour(val){
+    switch(val){
+      case 0: 
+        return "red";
+      case 1: 
+        return "amber";
+      case 2: 
+        return "green";
+      default: 
+        return "red";
+    }
+  }
+
   ngOnInit(): void {
     this.showPopup = false;
     this.vehicles = [
@@ -39,21 +52,24 @@ export class BasePopupComponent implements OnInit {
       reg: "AA09 yxx",
       isElectric: true, 
       range: 200,
-      mpg:21
+      mpg:21,
+      shouldReplace: 0
     },
     {
       make: "BMW I3",
       reg: "AA10 ryy",
       isElectric: true, 
       range: 200,
-      mpg:21
+      mpg:21,
+      shouldReplace: 1
     },
     {
       make: "Ford Ranger",
       reg: "AA09 axe",
       isElectric: false, 
       range: 200,
-      mpg:10
+      mpg:10,
+      shouldReplace: 2
     }];
     this.activeVehicle = this.vehicles[0];
   }

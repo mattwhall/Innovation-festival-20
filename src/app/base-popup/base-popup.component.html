@@ -15,6 +15,7 @@
             </div>
             <div class="car-view">
                 <h2>{{activeVehicle.make}}</h2> 
+                <div class="shouldReplace" [ngClass]="getColour(activeVehicle.shouldReplace)"></div>
                 <div class="row">
                     <div class="name">Is electric?</div>
                     <div class="value">
