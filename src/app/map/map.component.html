@@ -1,5 +1,8 @@
 <div class="map-component">
-    <div id="map-container"></div>
-    <app-base-popup [data]="baseData" [(showPopup)]="showBase"></app-base-popup>
-    <app-incident-popup [data]="incidentData"  [(showPopup)]="showIncident"></app-incident-popup>
+  <div id="map-container"></div>
+  <app-base-popup [data]="baseData" [(showPopup)]="showBase"></app-base-popup>
+  <app-incident-popup
+    [data]="incidentData"
+    [(showPopup)]="showIncident"
+  ></app-incident-popup>
 </div>

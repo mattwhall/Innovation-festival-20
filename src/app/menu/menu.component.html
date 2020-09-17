@@ -1,0 +1,50 @@
+<div class="menu-container">
+  <div class="menu-title-bar">
+    <div class="menu-title">View Options</div>
+    <button type="button" class="menu-close-btn">
+      <i
+        class="fa fa-chevron-left"
+        aria-hidden="true"
+        aria-label="'Close map menu'"
+      ></i>
+    </button>
+  </div>
+  <div class="menu-body-container">
+    <div class="menu-layer-options">
+      <div class="menu-body-title">Map Layers</div>
+      <label class="menu-form-group">
+        <span class="menu-form-label">Indicents</span>
+        <input
+          type="checkbox"
+          (ngModelChange)="
+            layers.showIncidents = $event; mapService.markers$.next(layers)
+          "
+          [ngModel]="layers.showIncidents"
+          aria-label="Show/Hide Indicents"
+        />
+      </label>
+      <label class="menu-form-group">
+        <span class="menu-form-label">Vehicles</span>
+        <input
+          type="checkbox"
+          (ngModelChange)="
+            layers.showFleet = $event; mapService.markers$.next(layers)
+          "
+          [ngModel]="layers.showFleet"
+          aria-label="Show/Hide Fleet"
+        />
+      </label>
+      <label class="menu-form-group">
+        <span class="menu-form-label">Depots</span>
+        <input
+          type="checkbox"
+          [ngModel]="layers.showDepots"
+          (ngModelChange)="
+            layers.showDepots = $event; mapService.markers$.next(layers)
+          "
+          aria-label="Show/Hide Depots"
+        />
+      </label>
+    </div>
+  </div>
+</div>
