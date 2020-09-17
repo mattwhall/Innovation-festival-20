@@ -49,8 +49,23 @@
 .car-view {
     padding: 0px 20px;
     width: 50%;
+    position: relative;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 100%);
+
+    .shouldReplace{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 100%;
+
+    }
+
+    .red{ background-color: red;}
+    .amber{ background-color: #FFD300;}
+    .green{ background-color: green;}
 
     .van {
         font-size: 50pt;
