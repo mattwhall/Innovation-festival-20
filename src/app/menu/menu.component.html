@@ -1,7 +1,20 @@
-<div class="menu-container">
+<button
+  type="btn"
+  class="menu-open-btn"
+  *ngIf="!menuOpen"
+  (click)="menuOpen = true"
+>
+  <i
+    class="fa fa-chevron-right"
+    aria-hidden="true"
+    aria-label="'Open map menu'"
+  ></i>
+</button>
+
+<div class="menu-container" [@slideInAnimation]="menuOpen">
   <div class="menu-title-bar">
     <div class="menu-title">View Options</div>
-    <button type="button" class="menu-close-btn">
+    <button type="button" class="menu-close-btn" (click)="menuOpen = false">
       <i
         class="fa fa-chevron-left"
         aria-hidden="true"
