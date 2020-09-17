@@ -12,8 +12,14 @@ export class BasePopupComponent implements OnInit {
   
   @Input() data:any;
 
+  vehicles: any;
+  activeVehicle: any;
+
   constructor() {
-    this.showPopup = false;
+  }
+
+  isActive(reg) {
+    return this.activeVehicle.reg == reg
   }
 
   closePopup(){
@@ -21,7 +27,35 @@ export class BasePopupComponent implements OnInit {
     this.showPopupChange.emit(false);
   }
 
+  setActive(vehicle){
+    this.activeVehicle = vehicle;
+  }
+
   ngOnInit(): void {
+    this.showPopup = false;
+    this.vehicles = [
+      {
+      make: "Nissan Leaf",
+      reg: "AA09 yxx",
+      isElectric: true, 
+      range: 200,
+      mpg:21
+    },
+    {
+      make: "BMW I3",
+      reg: "AA10 ryy",
+      isElectric: true, 
+      range: 200,
+      mpg:21
+    },
+    {
+      make: "Ford Ranger",
+      reg: "AA09 axe",
+      isElectric: false, 
+      range: 200,
+      mpg:10
+    }];
+    this.activeVehicle = this.vehicles[0];
   }
 
 }
