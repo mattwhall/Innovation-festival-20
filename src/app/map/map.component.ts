@@ -12,11 +12,12 @@ import { MapToggleService } from '../map-toggle.service';
 export class InnovationMapComponent implements OnInit,AfterViewInit {
   constructor(public mapService: MapToggleService){}
   map: Map;
+
+  //popups
   showBase: boolean = false;
   showIncident: boolean = false;
   baseData: any;
   incidentData: any;
-  layers: any;
 
   ngOnInit(): void {
     this.map = new Map({
@@ -26,12 +27,7 @@ export class InnovationMapComponent implements OnInit,AfterViewInit {
       center:new LngLat(-1.6178, 54.9783),
       accessToken: environment.accessToken
     }); 
-    this.mapService.markers$.subscribe(data => {
-      console.log(data);
-      
-      // this could equally just be calling whatever needs calling to turn layers on/off
-      this.layers = {...data};
-    })
+  
   }
 
   ngAfterViewInit(): void {
@@ -49,29 +45,14 @@ export class InnovationMapComponent implements OnInit,AfterViewInit {
           _this.showIncident = false;
           _this.baseData = e.features[0];
         });
+        _this.mapService.markers$.subscribe(data => {
+          _this.map.setLayoutProperty("missionzero", 'visibility', data.showIncidents?'visible':'none');
+          _this.map.setLayoutProperty("northumbriadepotasgeojson-atfs9j", 'visibility', data.showDepots?'visible':'none');
+          _this.map.setLayoutProperty("emissionCloud", 'visibility', data.showFleet?'visible':'none');
+        });
       });
   }
 
-  placeMarkers(): void {
-    var _this = this;
-    var baseMarker = new Marker();
-    baseMarker.setLngLat(new LngLat(-1.6178, 54.9783));
-    baseMarker.on("click", function(){
-      console.log("click");
-      _this.showBase = true;
-    });
-    baseMarker.addTo(this.map);
-
-    var incidentMarker = new Marker({
-      color: "#FF0000"
-    });
-    incidentMarker.setLngLat(new LngLat(-1.6068, 54.9603));
-    incidentMarker.on("click", function(){
-      console.log("click");
-      _this.showIncident = true;
-    });
-    incidentMarker.addTo(this.map);
-  }
 
 
 }

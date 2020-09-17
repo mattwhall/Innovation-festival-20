@@ -26,15 +26,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="activeVehicle.isElectric">
                     <div class="name">Range</div>
                     <div class="value">{{activeVehicle.range}} miles</div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="!activeVehicle.isElectric">
                     <div class="name">MPG</div>
                     <div class="value">{{activeVehicle.mpg}}</div>
                 </div>
-
+                <div class="row" *ngIf="!activeVehicle.isElectric">
+                    <div class="name">Carbon cost</div>
+                    <div class="value">149 gCO2/km</div>
+                </div>
                 <div class="van">
                     <marquee>
                         <i class="fa fa-truck" aria-hidden="true"></i>

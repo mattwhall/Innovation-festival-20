@@ -4,6 +4,11 @@ h2 {
     margin-bottom: 10px;
 }
 
+
+.row {
+    margin: 20px 0px;
+}
+
 .parts textarea {
     width: 90%;
     padding: 5px;
@@ -24,6 +29,16 @@ h2 {
                 margin-left: 80px;
                 transition: margin 0.5s;
             }
+
+            button {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            float: right;
+            display: none;
         }
 
         span {
