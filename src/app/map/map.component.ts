@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { LngLat,Map,Marker, Popup, } from 'mapbox-gl';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-map',
@@ -21,7 +22,7 @@ export class InnovationMapComponent implements OnInit,AfterViewInit {
       style: 'mapbox://styles/matthewwhalley/ckf57maro2cu019o9cj9l5zym',
       zoom: 9,
       center:new LngLat(-1.6178, 54.9783),
-      accessToken: ''
+      accessToken: environment.accessToken
     });
   }
 
