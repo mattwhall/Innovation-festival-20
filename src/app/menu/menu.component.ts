@@ -11,7 +11,7 @@ export class MenuComponent {
 
   public layers: any = {
     showIncidents: true,
-    showFleet: true,
+    showFleet: false,
     showDepots: true
   }
 }

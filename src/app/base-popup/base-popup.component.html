@@ -8,7 +8,7 @@
                 <div class="car" *ngFor="let car of vehicles" (click)="setActive(car)">
                     <div>
                         <span class="make" [ngClass]="{'active' : isActive(car.reg)}">{{car.make}}</span>
-                        <span class="registration">{{car.reg}}</span>
+                        <span class="registration">{{car.reg | uppercase }}</span>
                         <div class="action"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </div>
                 </div>

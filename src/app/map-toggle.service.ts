@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class MapToggleService {
   public markers$: BehaviorSubject<any> = new BehaviorSubject<any>({
     showIncidents: true,
-    showFleet: true,
+    showFleet: false,
     showDepots: true
   });
 
